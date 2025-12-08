@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Movie Mania!"; // Titel til layout
+    var CurrentTime = DateTime.Now;
+    var Greeting = CurrentTime.Hour < 12 ? "Good Morning" : "Good Afternoon";
+}
+
+<p>The current time is: @CurrentTime. @Greeting.</p>
+
+
+
+
+
+

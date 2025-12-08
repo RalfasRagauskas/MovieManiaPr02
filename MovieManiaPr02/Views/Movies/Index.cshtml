@@ -1,0 +1,26 @@
+﻿@using MovieManiaPr02.Models;
+@using MovieManiaPr02.Persistence
+@model IEnumerable<MovieManiaPr02.Models.Movie>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>Welcome to the movielist</h1>
+
+
+
+<ul>
+    @foreach (var movie in Model)
+    {
+        <li>
+            <br />
+            <strong>Title:</strong> @movie.Title <br />
+            <strong>Year of Release:</strong> @movie.ReleaseYear <br />
+            <strong>Duration in minutes:</strong> @movie.DurationInMinutes <br />
+            <strong>Description:</strong> @movie.Description <br />
+            <strong>Rating:</strong> @movie.Rating <br />
+        </li>
+    }
+</ul>
+
