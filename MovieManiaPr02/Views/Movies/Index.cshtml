@@ -6,21 +6,36 @@
     Layout = "_Layout";
 }
 
-<h1>Welcome to the movielist</h1>
+<header class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Movies</h1>
+
+    <button type="button" class="btn btn-info">Add Movie</button>
+</header>
 
 
 
-<ul>
+<div class="container"> 
+    <div class="row">
+
+  
     @foreach (var movie in Model)
     {
-        <li>
-            <br />
-            <strong>Title:</strong> @movie.Title <br />
-            <strong>Year of Release:</strong> @movie.ReleaseYear <br />
-            <strong>Duration in minutes:</strong> @movie.DurationInMinutes <br />
-            <strong>Description:</strong> @movie.Description <br />
-            <strong>Rating:</strong> @movie.Rating <br />
-        </li>
+      
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                <h5 class="card-title">@movie.Title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@movie.ReleaseYear | @movie.DurationInMinutes | *@movie.Rating</h6>
+                <p class="card-text">@movie.Description</p>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+                    </div>
+                </div>
+        
     }
-</ul>
+     </div>
+
+    </div>
+
 

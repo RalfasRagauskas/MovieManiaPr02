@@ -1,27 +1,51 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Titel i browserens faneblad, kan sættes per View -->
     <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
 </head>
 <body>
 
     <header>
-        <!-- Overskrift på siden -->
+        
+       
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">MovieMania</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Movies" asp-action="Index">Movies</a>
+                    </li>
+                </ul>
+               
+            </div>
+        </nav>
+
+
         <h1>@ViewData["Title"]</h1>
 
-        <!-- Navigation -->
-        <nav>
-            <a href="@Url.Action("Index", "Home")">Home</a> |
-            <a href="@Url.Action("Index", "Movies")">Movies</a>
-        </nav>
+        
+      
     </header>
 
     <main>
-        <!-- Her indsætter hvert Views indhold -->
-        @RenderBody()
+
+       <div class="container">
+            @RenderSection("title", required: false)
+            @RenderBody()
+    </div>
     </main>
 
 </body>

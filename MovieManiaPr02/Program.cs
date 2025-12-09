@@ -12,7 +12,7 @@ namespace MovieManiaPr02
 
             var app = builder.Build();
 
-            
+            app.UseStaticFiles();
 
             app.UseRouting();
 
