@@ -1,6 +1,7 @@
 ﻿@using MovieManiaPr02.Models;
 @using MovieManiaPr02.Persistence
 @model IEnumerable<MovieManiaPr02.Models.Movie>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     Layout = "_Layout";
@@ -9,7 +10,9 @@
 <header class="d-flex justify-content-between align-items-center mb-3">
     <h1>Movies</h1>
 
-    <button type="button" class="btn btn-info">Add Movie</button>
+    
+    <a class="btn btn-primary" asp-controller="Movies" asp-action="Add">Add Movie</a>
+
 </header>
 
 

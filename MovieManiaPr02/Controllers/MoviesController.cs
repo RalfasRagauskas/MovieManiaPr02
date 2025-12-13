@@ -11,5 +11,38 @@ namespace MovieManiaPr02.Controllers
             var movies = MovieRepository.GetAll();
             return View(movies);
         }
+        public IActionResult Add()
+        {
+            return View(new Movie());
+        }
+
+
+
+        [HttpPost] 
+        public IActionResult Add(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                MovieRepository.Add(movie);
+                return RedirectToAction("Index");
+            }
+
+            return View(movie);
+            
+        }
+
+
+        public IActionResult Edit(int? id)
+        {
+            var movie = id.HasValue ? MovieRepository.GetById(id.Value) : null;
+            if (movie == null) return NotFound();
+
+            return View(movie);
+
+
+        }
+        
+        
+
     }
 }
