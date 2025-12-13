@@ -1,0 +1,12 @@
+﻿@model MovieManiaPr02.Models.Movie
+
+
+
+@{
+    ViewBag.Action = "Edit";
+    ViewBag.IsEdit = true;
+}
+
+<h1>Edit Movie</h1>
+
+@await Html.PartialAsync("_Movie", Model)

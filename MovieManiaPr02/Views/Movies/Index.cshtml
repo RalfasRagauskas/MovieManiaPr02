@@ -30,8 +30,13 @@
                 <h5 class="card-title">@movie.Title</h5>
                 <h6 class="card-subtitle mb-2 text-muted">@movie.ReleaseYear | @movie.DurationInMinutes | *@movie.Rating</h6>
                 <p class="card-text">@movie.Description</p>
-                <a href="#" class="btn btn-primary">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a class="btn btn-primary" asp-controller="Movies" asp-action="Edit" asp-route-id="@movie.MovieId">Edit</a>
+                <a class="btn btn-danger" asp-controller="Movies" asp-action="Delete" asp-route-id="@movie.MovieId"
+                   onclick="return confirm('Are you sure you want to delete the movie: @movie.Title?');">
+                   Delete
+                </a>
+
+
             </div>
                     </div>
                 </div>
@@ -42,3 +47,8 @@
     </div>
 
 
+    <script>
+
+        
+
+    </script>

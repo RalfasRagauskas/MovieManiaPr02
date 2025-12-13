@@ -41,8 +41,26 @@ namespace MovieManiaPr02.Controllers
 
 
         }
-        
-        
 
+        [HttpPost]
+        public IActionResult Edit(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                MovieRepository.Update(movie.MovieId, movie);
+                return RedirectToAction("Index");
+
+            }
+
+            return View(movie);
+
+        }
+
+
+        public IActionResult Delete(int id)
+        {
+            MovieRepository.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
