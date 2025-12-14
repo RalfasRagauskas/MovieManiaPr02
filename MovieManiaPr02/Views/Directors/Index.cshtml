@@ -1,0 +1,27 @@
+﻿@using MovieManiaPr02.Models;
+@using MovieManiaPr02.Persistence
+@model IEnumerable<MovieManiaPr02.Models.Director>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var director in Model)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@director.FullName</h5>
+
+                        <a class="btn btn-primary" asp-controller="Directors" asp-action="Edit" asp-route-id="@director.DirectorId">Edit</a>
+                        <a class="btn btn-danger" asp-controller="Directors" asp-action="Delete" asp-route-id="@director.DirectorId"
+                           onclick="return confirm('Are you sure you want to delete the director: @director.FullName?');">
+                            Delete
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

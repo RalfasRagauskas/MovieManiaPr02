@@ -1,0 +1,13 @@
+﻿@model MovieManiaPr02.Models.Director
+
+
+
+@{
+    ViewBag.Action = "Add";
+    ViewBag.IsEdit = false;
+}
+
+<h1>Add Director</h1>
+
+@await Html.PartialAsync("_Director", Model)
+

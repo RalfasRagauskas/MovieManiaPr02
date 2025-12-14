@@ -16,8 +16,6 @@ namespace MovieManiaPr02.Controllers
             return View(new Movie());
         }
 
-
-
         [HttpPost] 
         public IActionResult Add(Movie movie)
         {
@@ -37,6 +35,7 @@ namespace MovieManiaPr02.Controllers
             var movie = id.HasValue ? MovieRepository.GetById(id.Value) : null;
             if (movie == null) return NotFound();
 
+   
             return View(movie);
 
 
@@ -55,7 +54,6 @@ namespace MovieManiaPr02.Controllers
             return View(movie);
 
         }
-
 
         public IActionResult Delete(int id)
         {
