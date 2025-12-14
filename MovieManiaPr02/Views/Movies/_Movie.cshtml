@@ -1,6 +1,5 @@
 ﻿@model MovieManiaPr02.Models.Movie
 
-
 <form asp-action="@ViewBag.Action" method="post" class="mb-3">
 
     @if(ViewBag.IsEdit)
@@ -8,7 +7,6 @@
         <input type="hidden" asp-for="MovieId" />
     }
 
-    <input type="hidden" asp-for="MovieId" />
     <div class="mb-3">
         <label asp-for="Title" class="form-label"></label>
         <input asp-for="Title" class="form-control" />
